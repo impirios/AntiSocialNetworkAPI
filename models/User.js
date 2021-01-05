@@ -30,10 +30,11 @@ const userSchema = new mongoose.Schema({
     },
     PictureID:{
         type:mongoose.Schema.Types.ObjectId,
-        default:""
+        
     },
     Bio:{
         type:String,
+        default:""
 
     },
     DOB:{

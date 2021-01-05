@@ -3,7 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const App = express();
-
+const path = require('path');
+const fs = require('fs');
 App.use(express.json());
 
 App.use(bodyparser.urlencoded({
@@ -27,6 +28,14 @@ mongoose.connect(process.env.MONGO_URL,options);
 mongoose.connection.once("open", () => {
     console.log("DB connected.");
   });
+
+try {
+    fs.mkdirSync(path.join(__dirname, '/static/uploads/'));
+} 
+catch (err) {
+    if (err.code !== 'EEXIST') throw err;
+}
+  
   
 
 App.use("/signup",require('./routes/userAuthentication/signup.js'));
@@ -37,6 +46,11 @@ App.use('/profile',require('./routes/user/setProfile'));
 App.use('/profile',require('./routes/user/DeleteProfile'));
 App.use('/profile',require('./routes/user/getProfile'));
 App.use('/update',require('./routes/user/AddBio'));
+App.use('/test',require('./routes/user/test'));
+App.use('/follow',require('./routes/user/addFollower'));
+App.use('/followers',require('./routes/user/getFollowers'));
+App.use('/following',require('./routes/user/getFollowing'));
+
 App.listen(process.env.PORT||8080,()=>{
     console.log("Server started at "+process.env.HOST+":"+process.env.PORT);
-});
+}); 

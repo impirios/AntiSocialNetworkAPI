@@ -1,0 +1,7 @@
+File from: [../../static/uploads/h5pe2k3sTCrg59kCclouds.jpg]
+
+File to: [/home/impirios/Research/Projects/AntiSocialnetwork/routes/user/static/uploads/ch5pe2k3sTCrg59kCclouds.jpg]
+
+Compression algorithm: [-]
+
+Description: File does not exist!
