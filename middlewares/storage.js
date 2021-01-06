@@ -3,7 +3,6 @@ const multer = require('multer');
 const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
 const Mongoose = require('mongoose');
-var compress_images = require("compress-images");
 
 const Mongouri = process.env.MONGO_URL;
 let conn = Mongoose.connection;
