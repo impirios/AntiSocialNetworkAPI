@@ -44,6 +44,13 @@ const userSchema = new mongoose.Schema({
     Created:{
         type:Date,
         default:Date.now()
+    },
+    Followers:{
+        type:mongoose.Schema.Types.ObjectId,
+    },
+    Following:{
+        type:mongoose.Schema.Types.ObjectId,
+        
     }
 });
 

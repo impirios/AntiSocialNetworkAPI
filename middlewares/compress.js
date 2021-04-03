@@ -4,7 +4,7 @@ const Gupload = require('./upload.js');
 function compressSharp(req,res,upload)
 {
     sharp('static/uploads/'+req.file.filename)
-    .resize({width:400,height:400})
+    .resize({width:200,height:200})
     .toFormat('png')
     .toFile('static/uploads/c'+req.file.filename)
     .then(()=>{

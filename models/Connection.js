@@ -18,14 +18,6 @@ const ConnectionSchema = new mongoose.Schema({
     Followingname:{
         type:String,
         required:true
-    },
-    UserPic:{
-        type:String,
-        required:true
-    },
-    FollowingPic:{
-        type:String,
-        required:true
     }
 });
 
